@@ -1,0 +1,862 @@
+/* ==========================================================================
+   Global Styles
+   ========================================================================== */
+
+/* Color Palette */
+:root {
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --bg-light: #f8f9fa;
+  --bg-gradient: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  --text-dark: #343a40;
+  --white: #fff;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+p {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.display-4 {
+  font-size: 2.5rem;
+}
+
+.display-5 {
+  font-size: 2rem;
+}
+
+.fs-5 {
+  font-size: 1.1rem;
+}
+
+.fs-6 {
+  font-size: 0.95rem;
+}
+
+.text-sm {
+  font-size: 0.9rem;
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.text-muted {
+  color: var(--secondary) !important;
+}
+
+.text-dark {
+  color: var(--text-dark) !important;
+}
+
+.text-white {
+  color: var(--white) !important;
+}
+
+/* ==========================================================================
+   Components
+   ========================================================================== */
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  padding: 12px 30px;
+  font-weight: 600;
+  font-family: "Lato", sans-serif;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+  transform: scale(1.05);
+}
+
+.btn-light {
+  background-color: var(--bg-light);
+  border-color: var(--bg-light);
+  transition: all 0.3s ease;
+}
+
+.btn-light:hover {
+  background-color: #e2e6ea;
+  border-color: #dae0e5;
+}
+
+.btn-link {
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.btn-link:hover {
+  color: #0056b3;
+}
+
+/* Cards */
+.feature-card,
+.categories-item,
+.how-it-works-card,
+.location-card,
+.stat-card,
+.guideline-card,
+.best-card,
+.contact-form-card,
+.rental-benefit-card,
+.car-details-info,
+.car-details-rental-terms,
+.car-details-features {
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.feature-card:hover,
+.how-it-works-card:hover,
+.location-card:hover,
+.stat-card:hover,
+.guideline-card:hover,
+.best-card:hover,
+.rental-benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary);
+}
+
+.feature-icon i,
+.how-it-works-icon i,
+.best-icon i,
+.benefit-icon i,
+.car-details-info i,
+.car-details-rental-terms i,
+.car-details-features i,
+.categories-content i,
+.luxury-benefit i {
+  color: var(--primary);
+  transition: transform 0.3s ease, color 0.3s ease;
+  width: 20px; /* Ensure consistent width for alignment */
+  text-align: center; /* Center the icon */
+}
+
+/* Style for categories-content details */
+.categories-content p {
+  display: flex;
+  align-items: center;
+  color: var(--secondary);
+}
+
+/* Style for luxury-benefit */
+.luxury-benefit {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  background: var(--bg-light);
+  border-radius: 8px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.luxury-benefit:hover {
+  transform: scale(1.05);
+  background: #e9ecef;
+}
+
+.luxury-benefit i {
+  font-size: 1.5rem; /* Slightly larger for emphasis */
+}
+
+.luxury-benefit span {
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+}
+
+.feature-card:hover .feature-icon i {
+  transform: scale(1.2);
+  color: #0056b3;
+}
+
+.how-it-works-card:hover .how-it-works-icon i,
+.best-card:hover .best-icon i,
+.rental-benefit-card:hover .benefit-icon i {
+  transform: scale(1.1);
+}
+
+/* Form */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  font-family: "Lato", sans-serif;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+.form-control::placeholder {
+  color: var(--secondary);
+  opacity: 0.7;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Map */
+.map-iframe {
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Spinner */
+#spinner {
+  opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#spinner.show {
+  opacity: 1;
+}
+
+/* Back to Top */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+}
+
+/* ==========================================================================
+   Sections
+   ========================================================================== */
+
+/* Common Section Styles */
+.feature-section,
+.how-it-works-section,
+.guidelines-section,
+.contact-section,
+.rental-intro-section,
+.car-details-container,
+.luxury-intro-section {
+  position: relative;
+}
+
+.feature-section::before,
+.how-it-works-section::before,
+.guidelines-section::before,
+.contact-section::before,
+.rental-intro-section::before,
+.car-details-container::before,
+.luxury-intro-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Subtle dots pattern for section backgrounds */
+  background: url('https://www.transparenttextures.com/patterns/subtle-dots.png');
+  opacity: 0.1;
+}
+
+/* Topbar */
+.topbar {
+  background-color: var(--bg-light);
+  padding: 10px 0;
+}
+
+/* Navbar */
+.nav-bar {
+  background-color: var(--white);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.nav-link {
+  color: #333;
+  font-weight: 500;
+  font-family: "Lato", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary);
+}
+
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+/* Hero Banner */
+.hero-section {
+  /* Hero section background with car image from Unsplash */
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1200');
+  background-size: cover;
+  background-position: center;
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInBackground 1s ease-in-out;
+}
+
+@keyframes fadeInBackground {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.hero-title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.hero-btn {
+  font-size: 1.25rem;
+  padding: 15px 40px;
+}
+
+/* Feature Section */
+.feature-card {
+  min-height: 250px;
+}
+
+/* Car Section */
+.car-section {
+  background: var(--white);
+}
+
+.categories-item {
+  overflow: hidden;
+}
+
+.categories-img {
+  position: relative;
+}
+
+.categories-img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+  pointer-events: none;
+}
+
+.categories-img img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.categories-content {
+  background: var(--bg-light);
+  position: relative;
+}
+
+.categories-content .btn-primary {
+  padding: 10px 25px;
+  font-size: 0.95rem;
+}
+
+.categories-review .fa-star.text-secondary {
+  color: #ffc107;
+}
+
+/* Perspective Wrapper for 3D Animations */
+.perspective-wrapper {
+  perspective: 1000px; /* Adds depth for 3D effect */
+}
+
+/* 3D Rise Up Animation for Car Cards */
+@keyframes riseUp3D {
+  0% {
+    transform: translateY(80px) rotateX(30deg); /* Start closer and with less tilt */
+    opacity: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Initial smaller shadow */
+  }
+  100% {
+    transform: translateY(0) rotateX(0deg); /* End at original position */
+    opacity: 1;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Larger shadow for depth */
+  }
+}
+
+.animate__riseUp3D {
+  animation-name: riseUp3D;
+  animation-duration: 1.2s; /* Slightly longer for smoother motion */
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  transform-origin: bottom; /* Rotate from the bottom edge */
+}
+
+/* 3D Rise Up Animation for Text */
+@keyframes riseUp3DText {
+  0% {
+    transform: translateY(50px) rotateX(20deg); /* Smaller distance and tilt for text */
+    opacity: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Initial small shadow */
+  }
+  100% {
+    transform: translateY(0) rotateX(0deg); /* End at original position */
+    opacity: 1;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Larger shadow for depth */
+  }
+}
+
+.animate__riseUp3DText {
+  animation-name: riseUp3DText;
+  animation-duration: 1s; /* Slightly faster than cards for a lighter feel */
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  transform-origin: bottom; /* Rotate from the bottom edge */
+}
+
+/* Carousel */
+.carousel-item img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 10%;
+  background: rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+/* Car Details Page Specific Carousel */
+.car-details-gallery {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.car-details-gallery .carousel img {
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.car-details-gallery .carousel img:hover {
+  transform: scale(1.02);
+}
+
+.car-details-gallery .carousel-control-prev,
+.car-details-gallery .carousel-control-next {
+  width: 5%;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+}
+
+.car-details-gallery .carousel-control-prev-icon,
+.car-details-gallery .carousel-control-next-icon {
+  filter: brightness(0) invert(1);
+}
+
+/* How It Works Section */
+.how-it-works-card {
+  min-height: 180px; /* Smaller height for these cards */
+}
+
+/* Locations Section */
+.locations-section {
+  background: var(--white);
+}
+
+.location-card {
+  min-height: 250px;
+}
+
+.stat-card {
+  min-height: 200px;
+}
+
+/* Guidelines Section */
+.guideline-card {
+  min-height: 250px;
+}
+
+/* Rental Intro Section */
+.rental-intro-section {
+  /* Rental intro background with luxurious car interior image */
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://img.freepik.com/premium-photo/black-luxury-car-wallpaper-car-background_862994-4697.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.rental-details {
+  max-width: 1200px; /* Adjusted to accommodate grid */
+  margin: 0 auto;
+  visibility: visible !important; /* Ensure content is visible even if animation fails */
+  opacity: 1 !important; /* Override any animation-related opacity */
+}
+
+/* Ensure WOW.js animations don’t hide content initially */
+.wow {
+  visibility: visible !important;
+}
+
+.rental-benefit-card {
+  min-height: 200px;
+  text-align: center;
+}
+
+/* Luxury Intro Section */
+.luxury-intro-section {
+  /* Luxury intro background with luxurious car interior image */
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.stockcake.com/public/2/9/9/29985722-f215-4dd9-ba4d-47e778e61718_large/luxurious-car-interior-stockcake.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 3rem 0;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+/* Car Details Section */
+.car-details-container {
+  background: var(--bg-light);
+}
+
+/* Title styling */
+.car-details-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 2rem;
+}
+
+/* Section headings (e.g., Car Details, Rental Terms, Features) */
+.car-details-section-heading {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+}
+
+/* Car details and rental terms styling */
+.car-details-info p,
+.car-details-rental-terms p {
+  font-size: 1.1rem;
+  color: var(--secondary);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.car-details-rental-terms strong {
+  color: var(--text-dark);
+  margin-right: 0.5rem;
+}
+
+/* Features list styling */
+.car-details-features ul {
+  padding-left: 0;
+}
+
+.car-details-features li {
+  font-size: 1.1rem;
+  color: var(--secondary);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Book Now button styling */
+.car-details-book-now .btn-primary {
+  padding: 0.75rem 2rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.car-details-book-now .btn-primary:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Contact Section */
+.contact-section {
+  background: var(--bg-gradient);
+}
+
+.contact-add-item {
+  background: var(--white);
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-add-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.contact-icon i {
+  color: var(--primary);
+}
+
+.contact-form-card {
+  background: var(--white);
+}
+
+/* What Makes Us the Best Section */
+.best-section {
+  background: var(--white);
+}
+
+.best-card {
+  min-height: 250px;
+}
+
+.bg-secondary {
+  background-color: var(--secondary) !important;
+}
+
+.bg-light {
+  background-color: var(--bg-light) !important;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--text-dark);
+  color: var(--white);
+}
+
+.footer a {
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: var(--primary);
+}
+
+.copyright {
+  background-color: #212529;
+  color: var(--white);
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .display-4 {
+    font-size: 2rem;
+  }
+
+  .display-5 {
+    font-size: 1.75rem;
+  }
+
+  .fs-5 {
+    font-size: 1rem;
+  }
+
+  .fs-6 {
+    font-size: 0.9rem;
+  }
+
+  .text-sm {
+    font-size: 0.85rem;
+  }
+
+  .feature-card,
+  .location-card,
+  .guideline-card,
+  .best-card,
+  .rental-benefit-card {
+    min-height: 180px;
+    padding: 1rem;
+  }
+
+  .how-it-works-card {
+    min-height: 150px;
+  }
+
+  .stat-card {
+    min-height: 150px;
+  }
+
+  .hero-section {
+    padding: 80px 0;
+  }
+
+  .hero-btn {
+    padding: 10px 30px;
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .form-control {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+
+  iframe.map-iframe {
+    height: 350px;
+  }
+
+  /* Car Details Responsive Styles */
+  .car-details-title {
+    font-size: 2rem;
+  }
+
+  .car-details-section-heading {
+    font-size: 1.5rem;
+  }
+
+  .car-details-info p,
+  .car-details-rental-terms p,
+  .car-details-features li {
+    font-size: 1rem;
+  }
+
+  .car-details-gallery img {
+    height: 300px !important;
+  }
+
+  .car-details-book-now .btn-primary {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  /* Luxury Benefit Responsive Styles */
+  .luxury-benefit {
+    display: inline-flex;
+    margin-bottom: 1rem;
+  }
+
+  .luxury-benefit i {
+    font-size: 1.2rem;
+  }
+
+  .luxury-benefit span {
+    font-size: 0.9rem;
+  }
+
+  /* Luxury Intro Section Responsive Styles */
+  .luxury-intro-section {
+    padding: 2rem 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .display-4 {
+    font-size: 1.5rem;
+  }
+
+  .display-5 {
+    font-size: 1.25rem;
+  }
+
+  .fs-5 {
+    font-size: 0.9rem;
+  }
+
+  .fs-6 {
+    font-size: 0.85rem;
+  }
+
+  .text-sm {
+    font-size: 0.8rem;
+  }
+
+  .feature-card,
+  .location-card,
+  .guideline-card,
+  .best-card,
+  .rental-benefit-card {
+    min-height: 160px;
+    padding: 0.75rem;
+  }
+
+  .how-it-works-card {
+    min-height: 120px;
+  }
+
+  .stat-card {
+    min-height: 120px;
+  }
+
+  .form-control {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+
+  iframe.map-iframe {
+    height: 300px;
+  }
+
+  .luxury-benefit i {
+    font-size: 1rem;
+  }
+
+  .luxury-benefit span {
+    font-size: 0.85rem;
+  }
+
+  .luxury-intro-section {
+    padding: 1.5rem 0;
+  }
+}
