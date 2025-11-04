@@ -26,9 +26,9 @@ function LuxuryCars() {
             <div
               key={car.id}
               className="col-lg-3 col-md-6 wow animate__riseUp3D"
-              data-wow-delay={`0.${(index % 4) + 3}s`}
+              data-wow-delay={`0.₹{(index % 4) + 3}s`}
             >
-              <Link to={`/car-details/${car.id}`} style={{ textDecoration: 'none' }}>
+              <Link to={`/car-details/₹{car.id}`} style={{ textDecoration: 'none' }}>
                 <CarCard car={car} />
               </Link>
             </div>

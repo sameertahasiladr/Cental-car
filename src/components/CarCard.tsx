@@ -6,7 +6,7 @@ interface CarCardProps {
 }
 
 function CarCard({ car }: CarCardProps) {
-  const carouselId = `car-carousel-${car.id}`;
+  const carouselId = `car-carousel-₹{car.id}`;
 
   // Helper functions to strip descriptors for cleaner display
   const getTransmissionDisplay = (transmission?: string) => {
@@ -31,11 +31,11 @@ function CarCard({ car }: CarCardProps) {
           <div id={carouselId} className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
               {car.images.map((image, index) => (
-                <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
+                <div key={index} className={`carousel-item ₹{index === 0 ? "active" : ""}`}>
                   <img
                     src={image}
                     className="d-block w-100"
-                    alt={`${car.name} ${index + 1}`}
+                    alt={`₹{car.name} ₹{index + 1}`}
                     onError={(e) => {
                       e.currentTarget.src =
                         "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800";
@@ -47,7 +47,7 @@ function CarCard({ car }: CarCardProps) {
             <button
               className="carousel-control-prev"
               type="button"
-              data-bs-target={`#${carouselId}`}
+              data-bs-target={`#₹{carouselId}`}
               data-bs-slide="prev"
             >
               <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -56,7 +56,7 @@ function CarCard({ car }: CarCardProps) {
             <button
               className="carousel-control-next"
               type="button"
-              data-bs-target={`#${carouselId}`}
+              data-bs-target={`#₹{carouselId}`}
               data-bs-slide="next"
             >
               <span className="carousel-control-next-icon" aria-hidden="true"></span>

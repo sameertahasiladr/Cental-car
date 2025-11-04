@@ -59,11 +59,11 @@ function Contact() {
               <div
                 key={index}
                 className="col-lg-4 col-md-6 wow animate__fadeInUp"
-                data-wow-delay={`0.${(index % 3) + 3}s`}
+                data-wow-delay={`0.₹{(index % 3) + 3}s`}
               >
                 <div className="contact-add-item p-4">
                   <div className="contact-icon mb-3">
-                    <i className={`${detail.icon} fa-2x text-primary`}></i>
+                    <i className={`₹{detail.icon} fa-2x text-primary`}></i>
                   </div>
                   <h5 className="mb-2 text-dark">{detail.title}</h5>
                   {detail.link ? (

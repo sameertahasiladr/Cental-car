@@ -206,11 +206,11 @@ function Home() {
               <div
                 key={index}
                 className="col-lg-4 col-md-6 wow animate__fadeInUp"
-                data-wow-delay={`0.${(index % 3) + 3}s`}
+                data-wow-delay={`0.₹{(index % 3) + 3}s`}
               >
                 <div className="feature-card text-center p-4">
                   <div className="feature-icon mb-3">
-                    <i className={`${feature.icon} fa-3x`}></i>
+                    <i className={`₹{feature.icon} fa-3x`}></i>
                   </div>
                   <h5 className="mb-3 text-dark">{feature.title}</h5>
                   <p className="text-muted">{feature.description}</p>
@@ -234,9 +234,9 @@ function Home() {
               <div
                 key={car.id}
                 className="col-lg-3 col-md-6 wow animate__riseUp3D"
-                data-wow-delay={`0.${(index % 4) + 3}s`}
+                data-wow-delay={`0.₹{(index % 4) + 3}s`}
               >
-                <Link to={`/car-details/${car.id}`} style={{ textDecoration: 'none' }}>
+                <Link to={`/car-details/₹{car.id}`} style={{ textDecoration: 'none' }}>
                   <CarCard car={car} />
                 </Link>
               </div>
@@ -266,11 +266,11 @@ function Home() {
               <div
                 key={index}
                 className="col-lg-3 col-md-6 wow animate__fadeInUp"
-                data-wow-delay={`0.${(index % 4) + 3}s`}
+                data-wow-delay={`0.₹{(index % 4) + 3}s`}
               >
                 <div className="how-it-works-card text-center p-3">
                   <div className="how-it-works-icon mb-2">
-                    <i className={`${step.icon} fa-2x text-primary`}></i>
+                    <i className={`₹{step.icon} fa-2x text-primary`}></i>
                   </div>
                   <h5 className="mb-0 text-dark">{step.title}</h5>
                 </div>
@@ -296,7 +296,7 @@ function Home() {
               <div
                 key={index}
                 className="col-lg-4 col-md-6 wow animate__fadeInUp"
-                data-wow-delay={`0.${(index % 3) + 3}s`}
+                data-wow-delay={`0.₹{(index % 3) + 3}s`}
               >
                 <div className="location-card p-4">
                   <h5 className="mb-3 text-dark">
@@ -320,10 +320,10 @@ function Home() {
               <div
                 key={index}
                 className="col-lg-3 col-md-6 wow animate__zoomIn"
-                data-wow-delay={`0.${(index % 4) + 3}s`}
+                data-wow-delay={`0.₹{(index % 4) + 3}s`}
               >
                 <div className="stat-card text-center p-4">
-                  <i className={`${stat.icon} fa-3x text-primary mb-3`}></i>
+                  <i className={`₹{stat.icon} fa-3x text-primary mb-3`}></i>
                   <h3
                     className="text-dark mb-2 stat-value"
                     ref={(el) => { statRefs.current[index] = el; }}
@@ -351,11 +351,11 @@ function Home() {
               <div
                 key={index}
                 className="col-lg-4 col-md-6 wow animate__fadeInUp"
-                data-wow-delay={`0.${(index % 2) + 3}s`}
+                data-wow-delay={`0.₹{(index % 2) + 3}s`}
               >
                 <div className="guideline-card p-4">
                   <h5 className="mb-3 text-dark">
-                    <i className={`${guideline.icon} text-primary me-2`}></i>
+                    <i className={`₹{guideline.icon} text-primary me-2`}></i>
                     {guideline.title}
                   </h5>
                   <p className="text-muted mb-0">{guideline.description}</p>
@@ -382,11 +382,11 @@ function Home() {
               <div
                 key={index}
                 className="col-lg-4 col-md-6 wow animate__fadeInUp"
-                data-wow-delay={`0.${(index % 3) + 3}s`}
+                data-wow-delay={`0.₹{(index % 3) + 3}s`}
               >
                 <div className="best-card text-center p-4">
                   <div className="best-icon mb-3">
-                    <i className={`${benefit.icon} fa-3x text-primary`}></i>
+                    <i className={`₹{benefit.icon} fa-3x text-primary`}></i>
                   </div>
                   <h5 className="mb-3 text-dark">{benefit.title}</h5>
                   <p className="text-muted">{benefit.description}</p>

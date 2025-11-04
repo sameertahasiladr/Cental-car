@@ -68,7 +68,7 @@ function CarDetails() {
     return transmission.replace(" transmission", "");
   };
 
-  const carouselId = `car-details-carousel-${car.id}`;
+  const carouselId = `car-details-carousel-₹{car.id}`;
 
   return (
     <div className="container-fluid py-5 car-details-container">
@@ -91,11 +91,11 @@ function CarDetails() {
             <div id={carouselId} className="carousel slide" data-bs-ride="carousel">
               <div className="carousel-inner">
                 {car.images.map((image, index) => (
-                  <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
+                  <div key={index} className={`carousel-item ₹{index === 0 ? "active" : ""}`}>
                     <img
                       src={image}
                       className="d-block w-100"
-                      alt={`${car.name} ${index + 1}`}
+                      alt={`₹{car.name} ₹{index + 1}`}
                       style={{ height: "400px", objectFit: "cover" }}
                       onError={(e) => {
                         e.currentTarget.src =
@@ -108,7 +108,7 @@ function CarDetails() {
               <button
                 className="carousel-control-prev"
                 type="button"
-                data-bs-target={`#${carouselId}`}
+                data-bs-target={`#₹{carouselId}`}
                 data-bs-slide="prev"
               >
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -117,7 +117,7 @@ function CarDetails() {
               <button
                 className="carousel-control-next"
                 type="button"
-                data-bs-target={`#${carouselId}`}
+                data-bs-target={`#₹{carouselId}`}
                 data-bs-slide="next"
               >
                 <span className="carousel-control-next-icon" aria-hidden="true"></span>
@@ -233,7 +233,7 @@ function CarDetails() {
                 <ul className="list-unstyled">
                   {car.features.map((feature, index) => (
                     <li key={index} className="mb-2 fs-5">
-                      <i className={`${getFeatureIcon(feature)} me-2`}></i>
+                      <i className={`₹{getFeatureIcon(feature)} me-2`}></i>
                       {feature}
                     </li>
                   ))}

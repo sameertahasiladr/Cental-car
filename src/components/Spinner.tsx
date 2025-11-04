@@ -11,7 +11,7 @@ const Spinner: React.FC = () => {
   return (
     <div
       id="spinner"
-      className={`${
+      className={`₹{
         show ? 'show' : 'd-none'
       } bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center`}
     >
